@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Firebase!</title>
+    
+        <script src="https://www.gstatic.com/firebasejs/3.6.4/firebase.js"></script>
+        <script>
+          // Initialize Firebase
+          var config = {
+            apiKey: "AIzaSyBUeW6PHpfv4jW6IFosBxXh1Y12v6NHtt4",
+            authDomain: "trash-collection-14910.firebaseapp.com",
+            databaseURL: "https://trash-collection-14910.firebaseio.com",
+            storageBucket: "trash-collection-14910.appspot.com",
+            messagingSenderId: "521253789637"
+          };
+          firebase.initializeApp(config);
+        </script>
+        
+        <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+        
+        <script>
+            $( document ).ready(function() {
+                
+                firebase.auth().signInAnonymously().catch(function(error) {
+                    // Handle Errors here.
+                    var errorCode = error.code;
+                    var errorMessage = error.message;
+                    
+                    console.log('auth error');
+                });
+                
+                var scoreCountRef = firebase.database().ref('scores/').orderByChild('score');
+                            scoreCountRef.on('value', function(snapshot) {
+                                var users = snapshot.val();
+                                console.log(snapshot.val());
+                                for (var user in users) {
+                                    console.log(user + " has " + users[user].score + " points");
+                                }
+                            });
+                            
+                firebase.auth().onAuthStateChanged(function(user) {
+                    if (user) {
+                        // User is signed in.
+                        var isAnonymous = user.isAnonymous;
+                        var uid = user.uid;
+                        
+                        function writeUserData(username, score) {
+                            firebase.database().ref('scores/' + username).set({
+                                score: score
+                            });
+                        }
+                        
+                        writeUserData("mike", 10);
+                        
+                        setTimeout(function() {
+                            
+                        }, 10);
+                
+                    }
+                    else {
+                        console.log('user is signed out');
+                    }
+                    // ...
+                });
+
+            });
+        </script>
+    </head>
+    <body>
+        hiadsf
+    </body>
+    
+</html>

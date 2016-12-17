@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="gamebrain.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="gamebrain.js"></script>
+    <link rel="stylesheet" href="gamebrain.css" type="text/css" />
+</head>
+
+<body>
+    <title>A Trash Can And A Dream: A NYC Story</title>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"></script>
+    <div id="timer"> </div>
+
+    <div id="score">
+
+        <div id="scoretext">Begin</div>
+
+    </div>
+
+
+
+
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-4">
+                <div class="yourgarbage Trash" id="TrashBin">
+                    <img src="http://blog.cunysustainablecities.org/wp-content/uploads/2009/08/trashcan.jpg">
+                </div>
+            </div>
+            <div class="col-xs-4">
+                <div class="yourgarbage Recycle" id="RecycleBin">
+                    <img src="http://www.occoutdoors.com/images/thumbnails/600/500/detailed/9/Plastic_bin.jpg">
+                </div>
+            </div>
+            <div class="col-xs-4">
+                <div class="yourgarbage Comp" id="CompBin">
+                    <img src="https://hw.menardc.com/main/items/media/WCRED001/ProductLarge/266-1627CompostBin.jpg">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-2 col-xs-offset-5">
+                <div class="throwable Recycle" id="RecycleThrow">
+                    <img id="throwableImg" src="">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Trash Rec</h4>
+                </div>
+                <div class="modal-body">
+                    Congrats! Your score is <span id="userscore"></span>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" id="playAgain">Play Again</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        jQuery.noConflict();
+    </script>
+    <script type="text/javascript" src="gamebrain.js"></script>
+
+</body>
